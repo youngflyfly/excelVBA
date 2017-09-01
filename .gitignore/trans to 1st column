@@ -1,0 +1,20 @@
+Public Sub 转为一列_请空出第一列()
+m = Selection.Rows.Count
+n = Selection.Rows.Count
+'控制最大行列防止死机
+It m > 500 Then
+m = 500
+End If
+If n > 200 Then
+n = 200
+End If
+
+'从行开始转
+p = 2
+For i = 1 to m
+  For j = 1 to n
+    Cells(p,1)=Selection.Cells(i,j)
+    p=p+1
+  Next j
+Next i
+End Sub
